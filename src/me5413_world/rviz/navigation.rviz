@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /Sensing1
+        - /Sensing1/LaserScan1
         - /Localization1
         - /Planning1
         - /Evaluation1
@@ -29,7 +30,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2
+    SyncSource: Image
   - Class: rviz_panel::simplePanel
     Name: simplePanel
 Preferences:
@@ -100,12 +101,38 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        front_high_laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_high_laser_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         front_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        front_low_laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_low_laser_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         front_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_mount_high:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_mount_low:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -122,35 +149,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        mid_vlp16_leg1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        mid_vlp16_leg2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        mid_vlp16_leg3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        mid_vlp16_leg4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        mid_vlp16_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        mid_vlp16_plate:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         navsat_link:
           Alpha: 1
           Show Axes: false
@@ -171,25 +169,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         rear_right_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tim551:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tim551_mount_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        velodyne:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        velodyne_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -238,8 +217,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 7.487448692321777
-            Min Value: -0.4609608054161072
+            Max Value: 17.88880157470703
+            Min Value: -0.5523601770401001
             Value: true
           Axis: X
           Channel Name: intensity
@@ -258,7 +237,7 @@ Visualization Manager:
           Size (Pixels): 3
           Size (m): 0.05000000074505806
           Style: Spheres
-          Topic: /front/scan
+          Topic: /front/scan_multi
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -303,13 +282,8 @@ Visualization Manager:
           Value: false
           Visibility:
             Evaluation:
-              Absolute Error:
-                ADE (m): true
-                AHE (deg): true
-                Value: true
-              Relative Error:
-                RDE (m): true
-                RHE (deg): true
+              "":
+                "": true
                 Value: true
               Value: true
             Grid: true
@@ -695,7 +669,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 4
+      Distance: 6.294077396392822
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
