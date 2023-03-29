@@ -101,11 +101,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        front_high_laser:
+        front_laser:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        front_high_laser_mount:
+          Value: true
+        front_laser_mount:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -115,24 +116,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        front_low_laser:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_low_laser_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         front_mount:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_mount_high:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        front_mount_low:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -217,8 +201,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 17.88880157470703
-            Min Value: -0.5523601770401001
+            Max Value: 10.41678524017334
+            Min Value: -0.7507616281509399
             Value: true
           Axis: X
           Channel Name: intensity
@@ -237,7 +221,7 @@ Visualization Manager:
           Size (Pixels): 3
           Size (m): 0.05000000074505806
           Style: Spheres
-          Topic: /front/scan_multi
+          Topic: /front/scan
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -282,8 +266,13 @@ Visualization Manager:
           Value: false
           Visibility:
             Evaluation:
-              "":
-                "": true
+              Absolute Error:
+                ADE (m): true
+                AHE (deg): true
+                Value: true
+              Relative Error:
+                RDE (m): true
+                RHE (deg): true
                 Value: true
               Value: true
             Grid: true

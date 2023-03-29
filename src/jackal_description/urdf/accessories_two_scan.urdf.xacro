@@ -53,11 +53,11 @@
   <!-- Primary 2D Lidar -->
   <xacro:if value="$(optenv JACKAL_LASER 1)">
     <xacro:property name="mount" value="$(optenv JACKAL_LASER_MOUNT front)" />
-    <xacro:property name="topic" value="$(optenv JACKAL_LASER_TOPIC front/scan)" />
+    <xacro:property name="topic" value="$(optenv JACKAL_LASER_TOPIC front/scan1)" />
     <xacro:property name="tower" value="$(optenv JACKAL_LASER_TOWER 1)" />
-    <xacro:property name="prefix" value="$(optenv JACKAL_LASER_PREFIX ${mount})" />
-    <xacro:property name="parent" value="$(optenv JACKAL_LASER_PARENT ${mount}_mount)" />
-    <xacro:property name="lidar_model" value="$(optenv JACKAL_LASER_MODEL lms1xx)" />
+    <xacro:property name="prefix" value="$(optenv JACKAL_LASER_PREFIX ${mount}_high)" />
+    <xacro:property name="parent" value="$(optenv JACKAL_LASER_PARENT ${mount}_mount_high)" />
+    <xacro:property name="lidar_model" value="$(optenv JACKAL_LASER_MODEL utm30)" />
     <xacro:property name="mount_type" value="$(optenv JACKAL_LASER_MOUNT_TYPE upright)" />
     <!-- SICK LMS1xx -->
     <xacro:if value="${lidar_model == 'lms1xx'}">
@@ -115,13 +115,13 @@
   </xacro:if>
 
   <!-- Secondary 2D Lidar -->
-  <xacro:if value="$(optenv JACKAL_LASER_SECONDARY 0)">
-    <xacro:property name="mount" value="$(optenv JACKAL_LASER_SECONDARY_MOUNT rear)" />
-    <xacro:property name="topic" value="$(optenv JACKAL_LASER_SECONDARY_TOPIC rear/scan)" />
+  <xacro:if value="$(optenv JACKAL_LASER_SECONDARY 1)">
+    <xacro:property name="mount" value="$(optenv JACKAL_LASER_SECONDARY_MOUNT front)" />
+    <xacro:property name="topic" value="$(optenv JACKAL_LASER_SECONDARY_TOPIC front/scan2)" />
     <xacro:property name="tower" value="$(optenv JACKAL_LASER_SECONDARY_TOWER 1)" />
-    <xacro:property name="prefix" value="$(optenv JACKAL_LASER_SECONDARY_PREFIX ${mount})" />
-    <xacro:property name="parent" value="$(optenv JACKAL_LASER_SECONDARY_PARENT ${mount}_mount)" />
-    <xacro:property name="lidar_model" value="$(optenv JACKAL_LASER_SECONDARY_MODEL lms1xx)" />
+    <xacro:property name="prefix" value="$(optenv JACKAL_LASER_SECONDARY_PREFIX ${mount}_low)" />
+    <xacro:property name="parent" value="$(optenv JACKAL_LASER_SECONDARY_PARENT ${mount}_mount_low)" />
+    <xacro:property name="lidar_model" value="$(optenv JACKAL_LASER_SECONDARY_MODEL utm30)" />
     <!-- SICK LMS1xx -->
     <xacro:if value="${lidar_model == 'lms1xx'}">
       <!-- Mount Enabled -->
@@ -165,7 +165,7 @@
     <!-- Hokuyo UTM30 -->
     <xacro:if value="${lidar_model == 'utm30'}">
       <xacro:hokuyo_utm30_mount topic="${topic}" prefix="${prefix}" parent_link="${parent}">
-        <origin xyz="$(optenv JACKAL_LASER_SECONDARY_OFFSET 0 0 0)" rpy="$(optenv JACKAL_LASER_SECONDARY_RPY 0 0 3.14159)" />
+        <origin xyz="$(optenv JACKAL_LASER_SECONDARY_OFFSET 0 0 0)" rpy="$(optenv JACKAL_LASER_SECONDARY_RPY 0 0 0)" />
       </xacro:hokuyo_utm30_mount>
     </xacro:if>
   </xacro:if>
@@ -277,7 +277,7 @@
   <!-- If enabled, generate the flea3 camera payload with a tilt of 30 degrees. -->
   <xacro:if value="$(optenv JACKAL_FLEA3 1)">
     <xacro:property name="name" value="$(optenv JACKAL_FLEA3_NAME front)" />
-    <xacro:property name="tilt" value="$(optenv JACKAL_FLEA3_TILT 0.5236)" />
+    <xacro:property name="tilt" value="$(optenv JACKAL_FLEA3_TILT 0.)" />
     <xacro:property name="tower" value="$(optenv JACKAL_FLEA3_TOWER 1)" />
     <xacro:property name="mount" value="$(optenv JACKAL_FLEA3_MOUNT front)" />
     <xacro:property name="prefix" value="$(optenv JACKAL_FLEA3_PREFIX ${mount})" />
