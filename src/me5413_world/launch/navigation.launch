@@ -18,4 +18,10 @@
 
   <node ns="me5413_world" pkg="me5413_world" type="goal_publisher_node" name="goal_publisher_node" output="screen" />
 
+  <!-- <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization">
+      <remap from="odometry/filtered" to="/odom"/>
+      <remap from="imu/data" to="/imu"/>
+  </node> -->
+
+
 </launch>
