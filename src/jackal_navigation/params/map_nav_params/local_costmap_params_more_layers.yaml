@@ -13,3 +13,4 @@ local_costmap:
    - {name: static_layer, type: "costmap_2d::StaticLayer"}
    - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
    - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
+   - {name: sonar_layer, type: "range_sensor_layer::RangeSensorLayer"} 

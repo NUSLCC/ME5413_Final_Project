@@ -16,6 +16,7 @@ footprint_padding: 0.1
 plugins:
 - {name: obstacles_layer, type: "costmap_2d::ObstacleLayer"}
 - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
+- {name: sonar_layer, type: "range_sensor_layer::RangeSensorLayer"}
 
 obstacles_layer:
   observation_sources: scan
@@ -23,4 +24,17 @@ obstacles_layer:
 
 inflater_layer:
  inflation_radius: 0.15
+
+sonar_layer:
+	enabled: true
+	no_readings_timout: 0.0
+	#clear grid as free when lower than this threshold probability
+	clear_threshold: 0.8
+	#mark grid as occupied when higher than this threshold probability
+	mark_threshold: 0.9
+	topics: ["/front/ultrasonic"]
+	#clear when it larger than max reading
+	clear_on_max_reading: true
+
+
 
