@@ -157,6 +157,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        ultrasonic_sensor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -201,8 +205,8 @@ Visualization Manager:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 10.41678524017334
-            Min Value: -0.7507616281509399
+            Max Value: 5.0180158615112305
+            Min Value: -0.7944064140319824
             Value: true
           Axis: X
           Channel Name: intensity
@@ -464,12 +468,12 @@ Visualization Manager:
           Class: rviz/Map
           Color Scheme: map
           Draw Behind: false
-          Enabled: false
+          Enabled: true
           Name: Local CostMap
           Topic: /move_base/local_costmap/costmap
           Unreliable: false
           Use Timestamp: false
-          Value: false
+          Value: true
       Enabled: true
       Name: Planning
     - Class: rviz/Group

@@ -250,7 +250,7 @@
   <joint name="front_mount_joint_high" type="fixed">
     <parent link="mid_mount" />
     <child link="front_mount_high" />
-    <origin xyz="${mount_spacing} 0 0.1" />
+    <origin xyz="${mount_spacing} 0 0" />
   </joint>
 
   <link name="front_mount_low"></link>

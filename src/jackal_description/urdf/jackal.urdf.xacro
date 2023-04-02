@@ -246,6 +246,13 @@
     <origin xyz="${mount_spacing} 0 0" />
   </joint>
 
+  <link name="ultrasonic_sensor_link"></link>
+  <joint name="ultrasonic_sensor_joint" type="fixed">
+    <parent link="front_mount"/>
+    <child link="ultrasonic_sensor_link"/>
+    <origin xyz="0.12 0 -0.2" />
+  </joint>
+
   <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="$(find jackal_description)/urdf/jackal.gazebo" />
 
