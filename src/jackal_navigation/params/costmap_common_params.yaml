@@ -18,8 +18,9 @@ plugins:
 - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
 
 obstacles_layer:
-  observation_sources: scan_low
-  scan_low: {sensor_frame: front_mount_low, data_type: LaserScan, topic: front/scan2, marking: true, clearing: true, min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 2.5, raytrace_range: 3.0}
+  observation_sources: scan
+  scan: {sensor_frame: front_laser, data_type: LaserScan, topic: front/scan, marking: true, clearing: true, min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 2.5, raytrace_range: 3.0}
+  # scan_low: {sensor_frame: front_mount_low, data_type: LaserScan, topic: front/scan2, marking: true, clearing: true, min_obstacle_height: -2.0, max_obstacle_height: 2.0, obstacle_range: 2.5, raytrace_range: 3.0}
   
 inflater_layer:
  inflation_radius: 0.15
